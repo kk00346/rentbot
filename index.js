@@ -107,7 +107,9 @@ async function getNewestRent(topRents, normalRents, next) {
 
 async function openPuppeteer() {
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        args: ["--no-sandbox"],
+    });
     const page = await browser.newPage();
 
     // const client = await page.target().createCDPSession();

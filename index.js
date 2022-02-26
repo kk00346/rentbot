@@ -59,7 +59,7 @@ async function getRentData(csrfToken, urlJumpIp, urlJumpIpByTxt, phpsessid, t591
         // "x-csrf-token": "5EfgitCl5snpMN3o0O5xhRWKXTevLBL29cXvJ6wy",
         "x-requested-with": "XMLHttpRequest",
         "cookie": "PHPSESSID=" + phpsessid + "; urlJumpIp=" + urlJumpIp + "; urlJumpIpByTxt=" + urlJumpIpByTxt + "; T591_TOKEN=" + t591Token + "; new_rent_list_kind_test=1; newUI=1; _ga=GA1.3.404010469.1645688503; _gid=GA1.3.608010385.1645688503; _gat=1; _ga=GA1.4.404010469.1645688503; _gid=GA1.4.608010385.1645688503; _dc_gtm_UA-97423186-1=1; XSRF-TOKEN=" + xsrfToken + "; 591_new_session=" + _591NewsSession + "; tw591__privacy_agree=0",
-        "Referer": "https://rent.591.com.tw/?rentprice=15000,24000&section=44,47&searchtype=1&shape=2&showMore=1&order=posttime&orderType=desc",
+        "Referer": "https://rent.591.com.tw/?rentprice=15000,25000&section=44,47&searchtype=1&shape=2&showMore=1&order=posttime&orderType=desc",
         "Referrer-Policy": "strict-origin-when-cross-origin"
     }
 

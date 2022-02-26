@@ -1,10 +1,6 @@
 import fetch from 'node-fetch';
 import cron from 'node-cron';
 import {
-    parse
-} from 'node-html-parser';
-
-import {
     createClient
 } from 'redis';
 
@@ -71,8 +67,11 @@ async function getRentData(csrfToken, urlJumpIp, urlJumpIpByTxt, phpsessid, t591
         "body": null,
         "method": "GET"
     });
-    console.log(header);
+    // console.log(header);
     const data = await response.json();
+    console.log("top count is :: " + data.data.topData.length);
+    console.log("normal count is :: " + data.data.data.length);
+
     getNewestRent(data.data.topData, data.data.data, function (newestTopRents, newestNormalRents) {
         notify(newestTopRents.concat(newestNormalRents));
     })
@@ -102,17 +101,13 @@ async function getNewestRent(topRents, normalRents, next) {
         }
     }
     console.log(newestTopRents);
-
     console.log(newestNormalRents);
     next(newestTopRents, newestNormalRents);
 }
 
 async function openPuppeteer() {
 
-    const browser = await puppeteer.launch({
-        executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
-        headless: false
-    });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     // const client = await page.target().createCDPSession();
@@ -161,7 +156,6 @@ async function openPuppeteer() {
         if (cookie.name == 'urlJumpIpByTxt') {
             urlJumpIpByTxt = cookie.value;
         }
-
     }
     const csrfToken = await page.$eval("head > meta[name='csrf-token']", element => element.content);
     await browser.close();

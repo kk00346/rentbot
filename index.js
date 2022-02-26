@@ -31,7 +31,8 @@ async function notify(rents) {
             method: 'POST',
             body: params,
             headers: {
-                'Authorization': 'Bearer kO3AdaV1d5Xq1GkRuu6bcDNjGsg1kNpBB4ymkN2zrAY'
+                // 'Authorization': 'Bearer kO3AdaV1d5Xq1GkRuu6bcDNjGsg1kNpBB4ymkN2zrAY'
+                'Authorization': 'Bearer O2o1edXio5ToEB1e1CXpAYd598WyvMKiq7gtJOjLEKf'
             }
         });
         const data = await response.json();

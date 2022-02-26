@@ -12,7 +12,7 @@ module.exports = {
       repo: 'git@github.com:kk00346/rentbot.git',
       path: '/root/node/rentbot',
       'pre-deploy-local': '',
-      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production',
+      'post-deploy': 'npm install && pm2 reload ecosystem.config.cjs --env production',
       'pre-setup': ''
     }
   }

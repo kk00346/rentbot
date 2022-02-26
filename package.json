@@ -1,0 +1,21 @@
+{
+  "name": "rentbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-cron": "^3.0.0",
+    "node-fetch": "^3.2.0",
+    "node-html-parser": "^5.2.0",
+    "puppeteer": "^13.4.0",
+    "puppeteer-core": "^13.4.0",
+    "redis": "^4.0.4",
+    "selenium-webdriver": "^4.1.1"
+  }
+}

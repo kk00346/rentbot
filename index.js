@@ -22,10 +22,10 @@ async function notify(rents) {
             rent.section_name + "\n" +
             rent.street_name + "\n" +
             "https://rent.591.com.tw/home/" + rent.post_id);
-        if (rent.photo_list && rent.photo_list[0]) {
-            params.append('imageFullsize', rent.photo_list[0])
-            params.append('imageThumbnail', rent.photo_list[0])
-        }
+        // if (rent.photo_list && rent.photo_list[0]) {
+        //     params.append('imageFullsize', rent.photo_list[0])
+        //     params.append('imageThumbnail', rent.photo_list[0])
+        // }
 
         const response = await fetch('https://notify-api.line.me/api/notify', {
             method: 'POST',
@@ -63,7 +63,7 @@ async function getRentData(csrfToken, urlJumpIp, urlJumpIpByTxt, phpsessid, t591
         "Referrer-Policy": "strict-origin-when-cross-origin"
     }
 
-    const response = await fetch("https://rent.591.com.tw/home/search/rsList?is_format_data=1&is_new_list=1&type=1&region=3&section=47,44&searchtype=1&rentprice=15000,25000&shape=2&showMore=1&order=posttime&orderType=desc", {
+    const response = await fetch("https://rent.591.com.tw/home/search/rsList?is_format_data=1&is_new_list=1&type=1&region=3&section=47,43,44&searchtype=1&rentprice=15000,25000&shape=2&showMore=1&kind=1&multiRoom=2,3,4&order=posttime&orderType=desc", {
         "headers": header,
         "body": null,
         "method": "GET"
